@@ -1,0 +1,120 @@
+
+@import '../../styles/breakpoints.module.scss';
+
+  .card {
+    align-items: center;
+    justify-content: center; 
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &:before {
+        content: '';
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        background: transparent linear-gradient(0, #1f212b 0, #1F212B00 100%) 0 0 no-repeat padding-box;
+        bottom: 0;
+        z-index: 2;
+      }
+      &:after {
+        background: #1F212B00 0 0 no-repeat padding-box;
+        height: 100%;
+        content: '';
+        width: 100%;
+        bottom: 0;
+        z-index: inherit;
+        
+      }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.5s;
+    }
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        @include sm {
+            padding: 0rem;
+          }
+        @include md {
+            padding: 0.5rem;
+          }
+        @include lg {
+            padding: 1rem;
+          }
+        font-weight: 300;
+        z-index: 3;
+        -webkit-transform: translateY(50%);
+        transform: translateY(55%);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: opacity 0.1s 0.3s, -webkit-transform 0.5s;
+        transition: opacity 0.1s 0.3s, -webkit-transform 0.5s;
+        transition: transform 0.5s, opacity 0.1s 0.3s;
+        transition: transform 0.5s, opacity 0.1s 0.3s, -webkit-transform 0.5s;
+      }
+      &:hover {
+        
+        .overlay {
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+            -webkit-transition: opacity 0.1s, -webkit-transform 0.5s;
+            transition: opacity 0.1s, -webkit-transform 0.5s;
+            transition: transform 0.5s, opacity 0.1s;
+            transition: transform 0.5s, opacity 0.1s, -webkit-transform 0.5s;
+            text-shadow: 1px 1px 1px #000;
+        }
+        &:before {
+            height: 150%;
+            transition: 0.5s;
+          }
+    }
+
+    .carddetails {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        max-width: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+
+  .cardrow {
+    display: flex;
+  }
+  .cardrow > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardBtn {
+    border-color: #02b5a4;
+    background-color: #02b5a4;
+    transition: 0.3s;
+    border-radius: 30px;
+    color: #fff;
+        &:hover {
+            border-color: #008b7b; 
+            background-color: #008b7b;
+        }
+    }
+  
+}
+
+       

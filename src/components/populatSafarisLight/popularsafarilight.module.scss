@@ -1,0 +1,93 @@
+
+@import '../../styles/breakpoints.module.scss';
+
+  .card {
+    align-items: center;
+    justify-content: center; 
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &:before {
+        content: '';
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        background: transparent linear-gradient(0, #1f212b 0, #1F212B00 100%) 0 0 no-repeat padding-box;
+        bottom: 0;
+        z-index: 2;
+      }
+      &:after {
+        background: #1F212B00 0 0 no-repeat padding-box;
+        height: 100%;
+        content: '';
+        width: 100%;
+        bottom: 0;
+        z-index: inherit;
+        
+      }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        @include sm {
+            padding: 0rem;
+          }
+        @include md {
+            padding: 0.5rem;
+          }
+        @include lg {
+            padding: 1rem;
+          }
+        font-weight: 300;
+        z-index: 3;
+        text-shadow: 1px 1px 1px #000;
+      }
+      
+    .carddetails {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        max-width: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+  .cardrow {
+    display: flex;
+  }
+  .cardrow > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardBtn {
+    border-color: rgba(0, 139, 123, 0.9);
+    background-color: rgba(2, 181, 164, 0.6);
+    transition: 0.3s;
+    border-radius: 30px;
+    color: #fff;
+    
+        &:hover {
+            border-color: #008b7b; 
+            background-color: #008b7b;
+        }
+    }
+  
+}
+
+       
